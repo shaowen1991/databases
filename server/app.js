@@ -17,16 +17,19 @@ app.set('port', 3000);
 // Logging and parsing
 app.use(morgan('dev'));
 app.use(parser.json());
-
+app.use(parser.urlencoded({ extended: true }));
 // Set up our routes
 app.use('/classes', router);
 
 // Serve the client files
-app.use(express.static(__dirname + '/../client'));
+app.use(express.static(__dirname + '/../client/client/'));
+app.use(express.static(__dirname + '/../client/bower_components/'));
 
 // If we are being run directly, run the server.
 if (!module.parent) {
   app.listen(app.get('port'));
   console.log('Listening on', app.get('port'));
 }
+
+console.log("=====> IN APP <======");
 
