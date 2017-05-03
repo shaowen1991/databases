@@ -30,14 +30,15 @@ USE chat;
 -- 
 -- ---
 
-DROP TABLE IF EXISTS messages;
+DROP TABLE IF EXISTS Messages;
 		
-CREATE TABLE messages (
+CREATE TABLE Messages (
   id INTEGER NOT NULL AUTO_INCREMENT,
   text CHAR(255),
-  createAt datetime NOT NULL DEFAULT NOW(),
+  createdAt datetime NOT NULL DEFAULT NOW(),
   username CHAR(25),
   roomname CHAR(255),
+  updatedAt datetime NOT NULL DEFAULT NOW(),
   -- room_id INTEGER NOT NULL,
   PRIMARY KEY (id)
 );

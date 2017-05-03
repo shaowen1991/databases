@@ -3,9 +3,11 @@ var models = require('../models');
 module.exports = {
   messages: {
     get: function (req, res) {
-      models.messages.get((data) => {
-        res.send(data);
-      });
+      var data = models.messages.get();
+      res.send(data);
+      // models.messages.get((data) => {
+      //   res.send(data);
+      // });
     }, // a function which handles a get request for all messages
     post: function (req, res) {
       console.log("controller message post req body: ", req.body);

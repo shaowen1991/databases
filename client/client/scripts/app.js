@@ -56,7 +56,7 @@ var app = {
     $.ajax({
       url: app.server + 'messages',
       type: 'GET',
-      data: { order: '-createAt' },
+      data: { order: '-createdAt' },
       contentType: 'application/json',
       success: function(data) {
         // Don't bother if we have nothing to work with
